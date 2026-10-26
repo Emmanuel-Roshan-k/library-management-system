@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: library-management-system
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: BORROW_DAYS
+        value: 14
+      - key: DAILY_LATE_FEE
+        value: 5
+      - key: JWT_SECRET
+        generateValue: true
+      - key: MONGODB_URI
+        sync: false
